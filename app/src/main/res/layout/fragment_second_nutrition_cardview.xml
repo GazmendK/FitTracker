@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardDailyOverview"
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/zeile1"
+        app:strokeColor="@color/guidelines"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="26dp"
+            android:paddingHorizontal="16dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/tvDailyOverviewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daily Overview"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_color" />
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <ImageView
+                        android:id="@+id/nutritionSettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/icon_settings"
+                        app:tint="@color/text_color"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:checkable="true"
+                />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/card_divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dividerColor="@color/guidelines"
+                app:dividerInsetStart="4dp"
+                app:dividerInsetEnd="4dp"
+                android:layout_marginTop="8dp"
+        />
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="2"
+                android:paddingTop="8dp">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="3"
+            >
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                >
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Carbohydrate"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_color" />
+
+                    <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:id="@+id/currentCarb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#0090d3" />
+                        <TextView
+                                android:id="@+id/maxCarb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#0090d3" />
+                    </LinearLayout>
+
+
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/CarbCountBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:indicatorTrackGapSize="1dp"
+                            app:trackStopIndicatorSize="0dp"
+                            app:indicatorColor="#0090d3"
+                    />
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_color" />
+                    <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:id="@+id/currentProtein"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#c17edd" />
+                        <TextView
+                                android:id="@+id/maxProtein"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#c17edd" />
+                    </LinearLayout>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/ProteinCountBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:indicatorTrackGapSize="1dp"
+                            app:trackStopIndicatorSize="0dp"
+                            app:indicatorColor="#c17edd"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fat"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_color" />
+                    <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:id="@+id/currentFat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#ff6c8a" />
+                        <TextView
+                                android:id="@+id/maxFat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#ff6c8a" />
+                    </LinearLayout>
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/FatCountBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:indicatorTrackGapSize="1dp"
+                            app:trackStopIndicatorSize="0dp"
+                            app:indicatorColor="#ff6c8a"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/currentKcal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffa600"/>
+
+
+                    <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                        <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:id="@+id/progressCalories"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                app:trackThickness="13dp"
+                                app:indicatorTrackGapSize="1dp"
+                                app:indicatorSize="100dp"
+                                app:indicatorColor="#ffa600"
+                                android:layout_gravity="center"
+                        />
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="kcal"
+                                android:layout_gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_color"
+                        />
+
+                    </FrameLayout>
+
+
+                    <TextView
+                            android:id="@+id/maxKcal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffa600"
+                    />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

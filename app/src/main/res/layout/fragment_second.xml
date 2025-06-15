@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".SecondFragment.SecondFragment">
+
+
+    <include
+            android:id="@+id/includeDailyOverview"
+            layout="@layout/fragment_second_nutrition_cardview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="12dp"
+            android:id="@+id/ProductRecyclerView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/includeDailyOverview"
+            app:layout_constraintBottom_toTopOf="@id/search_bar"/>
+
+
+    <com.google.android.material.search.SearchBar
+            android:id="@+id/search_bar"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/guidelines"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toStartOf="@id/barcode_scanner"
+            android:hint="Coming soon..."
+    />
+
+
+
+    <com.google.android.material.search.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
+
+    </com.google.android.material.search.SearchView>
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:borderWidth="1dp"
+            app:rippleColor="@color/button_color"
+            app:backgroundTint="@color/custom_ripple_colosr"
+            app:tint="@color/text_color"
+            app:srcCompat="@drawable/icon_add"
+            app:layout_constraintBottom_toTopOf="@id/barcode_scanner"
+            app:layout_constraintEnd_toEndOf="parent"
+
+    />-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/barcode_scanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:borderWidth="1dp"
+            app:rippleColor="@color/button_color"
+            app:backgroundTint="@color/custom_ripple_colosr"
+            app:tint="@color/text_color"
+            app:srcCompat="@drawable/icon_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+    />
+
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/protein_tester"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            app:borderWidth="1dp"
+            app:rippleColor="@color/button_color"
+            app:backgroundTint="@color/custom_ripple_colosr"
+            app:tint="@color/text_color"
+            app:srcCompat="@drawable/add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="320dp"/>-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--  <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="4">
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerViewCarbohydrate"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:name="com.example.tracker.SecondFragment.CarboGraphFragment"
+                android:layout_weight="1"
+                android:layout_marginTop="110dp"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" android:layout_weight="2"
+                >
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragmentContainerViewKcal"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:name="com.example.tracker.SecondFragment.KclGraphFragment"
+
+            />
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragmentContainerViewProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:name="com.example.tracker.SecondFragment.KclGraphFragment"
+            />
+        </LinearLayout>
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerViewFat"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:name="com.example.tracker.SecondFragment.KclGraphFragment"
+                android:layout_marginTop="110dp"/>
+    </LinearLayout> -->

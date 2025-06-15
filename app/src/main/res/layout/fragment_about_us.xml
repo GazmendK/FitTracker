@@ -1,0 +1,69 @@
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/zeile2"
+        android:padding="16dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licenses_title"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/license_mpandroidchart"
+                android:textColor="@color/text_color"
+                android:paddingBottom="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textSize="14sp" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/license_camerax"
+                android:textColor="@color/text_color"
+
+                android:paddingBottom="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textSize="14sp" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/license_firebase_crashlytics"
+                android:textColor="@color/text_color"
+                android:paddingBottom="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textSize="14sp" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/license_okhttp"
+                android:textColor="@color/text_color"
+                android:paddingBottom="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textSize="14sp" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/license_androidx"
+                android:textColor="@color/text_color"
+                android:paddingBottom="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+            android:text="FitTracker"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="100dp" android:id="@+id/textView"
+            android:textSize="54sp" android:textAlignment="center" android:fontFamily="sans-serif"/>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+    />
+    <androidx.fragment.app.FragmentContainerView
+            android:layout_width="match_parent"
+            android:layout_height="368dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            android:id="@+id/Makros_View"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.fragment.app.FragmentContainerView
+                android:background="@color/zeile1"
+                android:layout_width="match_parent"
+                android:layout_height="238dp"
+                android:layout_marginTop="16dp" android:id="@+id/Gewichtsverlauf_Graph"
+                android:layout_weight="1"/>
+
+        <View
+                android:id="@+id/divider2"
+                android:layout_width="213dp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider"
+                android:layout_weight="1"/>
+
+        <androidx.fragment.app.FragmentContainerView
+                android:background="@color/zeile2"
+                android:layout_width="match_parent"
+                android:layout_height="238dp"
+                android:layout_marginTop="16dp" android:id="@+id/Schritte_Graph"
+                android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>
+
+    <!-- Tagesübersicht -->
+    <include
+            android:id="@+id/includeDailyOverview"
+            layout="@layout/fragment_second_nutrition_cardview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+    />
+
+    <!-- RecyclerView für Mahlzeiten -->
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/includeDailyOverview"
+            app:layout_constraintBottom_toTopOf="@id/barcodeScanner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+
+        />
+    </LinearLayout>
+
+    <!--<androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/includeWeightGraph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.example.tracker.FirstFragment.WeightGraph" tools:layout_editor_absoluteY="280dp"
+        />
+
+    </androidx.cardview.widget.CardView>-->
+
+
+    <!-- <include
+             android:id="@+id/includeWeightGraph"
+             layout="@layout/fragment_first_weight_graph"
+             app:layout_constraintTop_toBottomOf="@id/includeDailyOverviewFirst"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             android:layout_margin="16dp"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"/>-->
+
+
+
+    <com.google.android.material.search.SearchBar
+            android:id="@+id/search_bar"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/guidelines"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toStartOf="@id/barcodeScanner"
+            android:hint="Coming soon..."
+    />
+
+
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/barcodeScanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:borderWidth="1dp"
+            app:rippleColor="@color/button_color"
+            app:backgroundTint="@color/custom_ripple_colosr"
+            app:tint="@color/text_color"
+            app:srcCompat="@drawable/icon_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--<HorizontalScrollView
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@id/includeDailyOverviewFirst"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent" >
+              <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="horizontal">
+
+                  <com.google.android.material.card.MaterialCardView
+                          android:id="@+id/cardDailyOvervieww"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="16dp"
+                          app:cardCornerRadius="16dp"
+                          app:cardElevation="6dp"
+                          >
+
+                      <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="16dp">
+
+                          <TextView
+                                  android:id="@+id/tvDailyOverviewTitlee"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Tagesübersicht"
+                                  android:textSize="20sp"
+                                  android:textStyle="bold"
+                                  android:textColor="#333"/>
+
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp">
+
+                              <com.google.android.material.progressindicator.CircularProgressIndicator
+                                      android:id="@+id/progressCaloriese"
+                                      android:layout_width="140dp"
+                                      android:layout_height="128dp"
+                                      app:trackThickness="10dp"
+                                      android:layout_weight="1"
+                                      android:progress="0"
+                                      android:max="100"
+                                      app:indicatorTrackGapSize="1dp"
+                                      app:indicatorSize="100dp"
+
+                              />
+
+                              <TextView
+                                      android:id="@+id/tvCaloriesProgresse"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginStart="8dp"
+                                      android:text="1400/2000 kcal"
+                                      android:textSize="14sp"
+                                      android:textColor="#777"/>
+                          </LinearLayout>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp"
+                                  android:weightSum="3">
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:id="@+id/tvProteien"
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="100g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#4CAF50"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Protein"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"
+                                          app:indicatorTrackGapSize="1dp"
+                                          app:trackStopIndicatorSize="0dp"/>
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:id="@+id/tvCarbes"
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="150g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#FF9800"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Kohlenhydrate"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:id="@+id/tvFatse"
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="50g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#F44336"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Fette"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"/>
+                              </LinearLayout>
+                          </LinearLayout>
+                      </LinearLayout>
+                  </com.google.android.material.card.MaterialCardView>
+
+                  <com.google.android.material.card.MaterialCardView
+                          android:id="@+id/cardDailyOverviewww"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="16dp"
+                          app:cardCornerRadius="16dp"
+                          app:cardElevation="6dp"
+                  >
+
+                      <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="16dp">
+
+                          <TextView
+                                  android:id="@+id/tvDaiwlyOverviewTitlee"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Tagesübersicht"
+                                  android:textSize="20sp"
+                                  android:textStyle="bold"
+                                  android:textColor="#333"/>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp">
+
+                              <com.google.android.material.progressindicator.CircularProgressIndicator
+                                      android:id="@+id/wprogressCaloriese"
+                                      android:layout_width="140dp"
+                                      android:layout_height="128dp"
+                                      app:trackThickness="10dp"
+                                      android:layout_weight="1"
+                                      android:progress="0"
+                                      android:max="100"
+                                      app:indicatorTrackGapSize="1dp"
+                                      app:indicatorSize="100dp"
+
+                              />
+
+                              <TextView
+                                      android:id="@+id/tvCaloriesProwgresse"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginStart="8dp"
+                                      android:text="1400/2000 kcal"
+                                      android:textSize="14sp"
+                                      android:textColor="#777"/>
+                          </LinearLayout>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp"
+                                  android:weightSum="3">
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:id="@+id/tvPwroteien"
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="100g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#4CAF50"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Protein"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"
+                                          app:indicatorTrackGapSize="1dp"
+                                          app:trackStopIndicatorSize="0dp"/>
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:id="@+id/tvCarbwes"
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="150g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#FF9800"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Kohlenhydrate"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:id="@+id/tvFaqtse"
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="50g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#F44336"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Fette"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"/>
+                              </LinearLayout>
+                          </LinearLayout>
+                      </LinearLayout>
+                  </com.google.android.material.card.MaterialCardView>
+
+                  <com.google.android.material.card.MaterialCardView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="16dp"
+                          app:cardCornerRadius="16dp"
+                          app:cardElevation="6dp"
+                  >
+
+                      <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="16dp">
+
+                          <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Tagesübersicht"
+                                  android:textSize="20sp"
+                                  android:textStyle="bold"
+                                  android:textColor="#333"/>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp">
+
+                              <com.google.android.material.progressindicator.CircularProgressIndicator
+                                      android:layout_width="140dp"
+                                      android:layout_height="128dp"
+                                      app:trackThickness="10dp"
+                                      android:layout_weight="1"
+                                      android:progress="0"
+                                      android:max="100"
+                                      app:indicatorTrackGapSize="1dp"
+                                      app:indicatorSize="100dp"
+
+                              />
+
+                              <TextView
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginStart="8dp"
+                                      android:text="1400/2000 kcal"
+                                      android:textSize="14sp"
+                                      android:textColor="#777"/>
+                          </LinearLayout>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp"
+                                  android:weightSum="3">
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="100g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#4CAF50"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Protein"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"
+                                          app:indicatorTrackGapSize="1dp"
+                                          app:trackStopIndicatorSize="0dp"/>
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="150g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#FF9800"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Kohlenhydrate"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="50g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#F44336"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Fette"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"/>
+                              </LinearLayout>
+                          </LinearLayout>
+                      </LinearLayout>
+                  </com.google.android.material.card.MaterialCardView>
+                  <com.google.android.material.card.MaterialCardView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="16dp"
+                          app:cardCornerRadius="16dp"
+                          app:cardElevation="6dp"
+                  >
+
+                      <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="16dp">
+
+                          <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Tagesübersicht"
+                                  android:textSize="20sp"
+                                  android:textStyle="bold"
+                                  android:textColor="#333"/>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp">
+
+                              <com.google.android.material.progressindicator.CircularProgressIndicator
+                                      android:layout_width="140dp"
+                                      android:layout_height="128dp"
+                                      app:trackThickness="10dp"
+                                      android:layout_weight="1"
+                                      android:progress="0"
+                                      android:max="100"
+                                      app:indicatorTrackGapSize="1dp"
+                                      app:indicatorSize="100dp"
+
+                              />
+
+                              <TextView
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginStart="8dp"
+                                      android:text="1400/2000 kcal"
+                                      android:textSize="14sp"
+                                      android:textColor="#777"/>
+                          </LinearLayout>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp"
+                                  android:weightSum="3">
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="100g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#4CAF50"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Protein"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"
+                                          app:indicatorTrackGapSize="1dp"
+                                          app:trackStopIndicatorSize="0dp"/>
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="150g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#FF9800"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Kohlenhydrate"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="50g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#F44336"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Fette"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"/>
+                              </LinearLayout>
+                          </LinearLayout>
+                      </LinearLayout>
+                  </com.google.android.material.card.MaterialCardView>
+
+                  <com.google.android.material.card.MaterialCardView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="16dp"
+                          app:cardCornerRadius="16dp"
+                          app:cardElevation="6dp"
+                  >
+
+                      <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="16dp">
+
+                          <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Tagesübersicht"
+                                  android:textSize="20sp"
+                                  android:textStyle="bold"
+                                  android:textColor="#333"/>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp">
+
+                              <com.google.android.material.progressindicator.CircularProgressIndicator
+                                      android:layout_width="140dp"
+                                      android:layout_height="128dp"
+                                      app:trackThickness="10dp"
+                                      android:layout_weight="1"
+                                      android:progress="0"
+                                      android:max="100"
+                                      app:indicatorTrackGapSize="1dp"
+                                      app:indicatorSize="100dp"
+
+                              />
+
+                              <TextView
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginStart="8dp"
+                                      android:text="1400/2000 kcal"
+                                      android:textSize="14sp"
+                                      android:textColor="#777"/>
+                          </LinearLayout>
+
+                          <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="16dp"
+                                  android:weightSum="3">
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="100g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#4CAF50"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Protein"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"
+                                          app:indicatorTrackGapSize="1dp"
+                                          app:trackStopIndicatorSize="0dp"/>
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="150g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#FF9800"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Kohlenhydrate"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+
+
+                              </LinearLayout>
+
+                              <LinearLayout
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center">
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="50g"
+                                          android:textSize="16sp"
+                                          android:textStyle="bold"
+                                          android:textColor="#F44336"/>
+
+                                  <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="Fette"
+                                          android:textSize="14sp"
+                                          android:textColor="#777"/>
+                                  <com.google.android.material.progressindicator.LinearProgressIndicator
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"
+                                          android:progress="40"
+                                          android:max="100"/>
+                              </LinearLayout>
+                          </LinearLayout>
+                      </LinearLayout>
+                  </com.google.android.material.card.MaterialCardView>
+
+
+
+              </LinearLayout>
+
+          </HorizontalScrollView>-->

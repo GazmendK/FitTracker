@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@drawable/abgerundete_ecke_sheet">
+
+    <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/guidelines"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+    />
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/ProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="@color/text_color"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:weightSum="2">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calories"
+                        android:textSize="24sp"
+                        android:textColor="@color/text_color"/>
+                <TextView
+                        android:id="@+id/CalorieCountProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:text="0"
+                        android:textStyle="bold"
+                        android:textColor="#ffa600"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="3">
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        tools:ignore="NestedWeights">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Carbohydrate"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_color"/>
+
+                    <TextView
+                            android:id="@+id/CarbCountProduct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:textColor="#0090d3"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_color"/>
+
+                    <TextView
+                            android:id="@+id/ProteinCountProduct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:textColor="#c17edd"/>
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fat"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_color"/>
+
+                    <TextView
+                            android:id="@+id/FatCountProduct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:textColor="#ff6c8a"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/guidelines"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+    />
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:singleSelection="true"
+
+    >
+
+        <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/buttonManuel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manuell"
+        />
+        <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/buttonServing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portion"
+        />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:id="@+id/textFieldLayout"
+            android:hint="Select one"
+            app:hintTextColor="@color/text_color"
+            app:boxStrokeColor="@color/white_text_input"
+            android:layout_margin="10sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/editTextWeight"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_margin="10sp"
+            android:id="@+id/insertNutrition"
+            android:text="Add"
+            android:textColor="@color/text_color"
+            android:textSize="26sp"
+            app:borderWidth="1dp"
+            app:rippleColor="@color/button_color"
+            app:backgroundTint="@color/custom_ripple_colosr"
+            app:tint="@color/text_color"
+
+    />
+
+</LinearLayout>

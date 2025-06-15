@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.tracker.MainActivity">
+
+    <!--<item
+            android:id="@+id/edit"
+            android:title="etwas"
+            android:contentDescription="etwas"
+            app:showAsAction="ifRoom" />
+
+    <item
+            android:id="@+id/favorite"
+            android:icon="@drawable/icon_add"
+            android:title="etwas"
+            android:contentDescription="etwas"
+            app:showAsAction="ifRoom" />-->
+
+    <item
+            android:id="@+id/aboutUs"
+            android:icon="@drawable/icon_info"
+            android:title="About us"
+            android:contentDescription="About us"
+            app:showAsAction="ifRoom" />
+</menu>

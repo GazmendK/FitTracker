@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+
+
+    <color name="text_color">#E8E8E9</color>
+
+    <color name="zeile1">#2A303C</color>
+    <color name="zeile2">#202632</color>
+    <color name="hintergrund">#202632</color>
+
+    <color name="guidelines">#3A3F4B</color>
+
+    <color name="gray">#8c9097</color>
+    <color name="light_gray">#A9ABAF</color>
+    <color name="primary">#060709</color>
+    <color name="button_color">#8F355BA6</color>
+    <color name="custom_ripple_color">#91355BA6</color>
+    <color name="custom_ripple_colosr">#3B518E</color>
+
+
+    <color name="calorie" >#ffa600</color>
+    <color name="carbs" >#0090d3</color>
+    <color name="protein" >#c17edd</color>
+    <color name="fat" >#ff6c8a</color>
+
+
+</resources>

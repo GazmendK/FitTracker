@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#0090d3" android:state_focused="true" /> <!-- Farbe, wenn fokussiert -->
+    <item android:color="#0090d3" android:state_hovered="true" /> <!-- Farbe, wenn über dem Feld -->
+    <item android:color="@color/guidelines" /> <!-- Standardfarbe -->
+</selector>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="120dp"
+                                   android:layout_margin="5dp"
+                                   app:cardBackgroundColor="@color/zeile1"
+                                   app:cardCornerRadius="8dp"
+                                   app:strokeColor="@color/guidelines"
+                                   android:clickable="true"
+                                   android:focusable="true"
+                                   android:checkable="true"
+                                   app:cardElevation="8dp"
+                                   app:cardMaxElevation="10dp"
+                                   app:cardPreventCornerOverlap="true"
+                                   app:cardUseCompatPadding="true" android:id="@+id/item_card" >
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+        >
+            <TextView
+                    android:id="@+id/idTVCourseName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageView
+                        android:id="@+id/editPlan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/icon_settings"
+                        app:tint="@color/text_color"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:checkable="true"
+                        android:layout_margin="0dp"
+                />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+        <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/card_divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dividerColor="@color/guidelines"
+                app:dividerInsetStart="16dp"
+                app:dividerInsetEnd="16dp"
+                android:layout_marginTop="8dp"
+            />
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+        >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uebung_count"
+                    android:layout_weight="1"
+                    android:textColor="@color/text_color"
+            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/daysCount"
+                    android:layout_weight="1"
+                    android:textColor="@color/text_color"
+
+
+            />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

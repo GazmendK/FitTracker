@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+>
+
+    <!-- Titel -->
+
+    <!-- Schaltflächen im Horizontalen Layout -->
+    <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textAlignment="center"/>
+
+
+    <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="8dp"
+            android:name="com.example.tracker.ThirdFragment.GraphFragment"/>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:weightSum="3.0">
+
+        <Button
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:id="@+id/addRowButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:text="Day"
+                app:backgroundTint="@color/button_color"
+                app:strokeColor="@color/guidelines"
+                app:rippleColor="@color/button_color"
+                app:icon="@drawable/icon_add"
+                app:iconTint="@color/text_color"
+        />
+        <Button
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:id="@+id/timerButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/text_color"
+                android:text="Timer"
+                app:strokeColor="@color/guidelines"
+                app:rippleColor="@color/button_color"
+                app:backgroundTint="@color/button_color"
+                app:icon="@drawable/icon_timer"
+                app:iconTint="@color/text_color"
+        />
+        <Button
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:id="@+id/addColumnButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/text_color"
+                android:text="Exercise"
+                android:textSize="12sp"
+
+                app:backgroundTint="@color/button_color"
+                app:strokeColor="@color/guidelines"
+                app:rippleColor="@color/button_color"
+                app:icon="@drawable/icon_add"
+                app:iconTint="@color/text_color"
+        />
+
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+    >
+
+        <HorizontalScrollView
+                android:overScrollMode="never"
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:background="@drawable/table_first_row">
+
+            <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="1"
+                   >
+
+                <!-- Überschriftenreihe (statisch) -->
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
+                         >
+                    <TextView
+                            android:text=""
+                            android:padding="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:textColor="@color/text_color"/>
+                    <EditText
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:inputType="textMultiLine"
+                            android:id="@+id/uebung_1" android:maxLines="3"
+                            android:text="Exercise 1"
+                            android:textColor="@color/text_color" android:gravity="center"
+                            android:background="@android:color/transparent"/>
+                    <EditText
+                            android:id="@+id/uebung_2"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:inputType="textMultiLine"
+                            android:text="Exercise 2"
+                            android:textColor="@color/text_color"
+                            android:gravity="center"
+                            android:background="@android:color/transparent"
+                            android:maxLines="3"/>
+
+
+                    <EditText
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:inputType="textMultiLine" android:maxLines="3"
+                            android:id="@+id/uebung_3"
+                            android:text="Exercise 3"
+                            android:textColor="@color/text_color" android:gravity="center"
+                            android:background="@android:color/transparent"/>
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:background="@drawable/table_border_2">
+                    <TextView
+                            android:text="Day 1"
+                            android:paddingLeft="8px"
+                            android:textStyle="bold"
+                            android:layout_width="200px"
+                            android:layout_height="wrap_content" android:textColor="@color/text_color"/>
+                    <EditText
+                            android:layout_width="300px"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:ems="10"
+                            android:id="@+id/editTextNumber1" android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/text_color" android:gravity="center"
+                            android:background="@android:color/transparent"/>
+
+                    <EditText
+                            android:layout_width="300px"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:ems="10"
+                            android:id="@+id/editTextNumber2" android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/text_color" android:gravity="center"
+                            android:background="@android:color/transparent" tools:text="0"/>
+
+                    <EditText
+                            android:layout_width="300px"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" android:textColor="@color/text_color"
+                            android:ems="10"
+                            android:text="0"
+                            android:id="@+id/editTextNumber3" android:singleLine="true" android:gravity="center"
+                            android:background="@android:color/transparent"/>
+
+                </TableRow>
+            </TableLayout>
+
+        </HorizontalScrollView>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</LinearLayout>
+
+

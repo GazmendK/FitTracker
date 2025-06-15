@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@drawable/abgerundete_ecke_sheet"
+>
+
+    <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+    <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/guidelines"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+    />
+
+   <!-- <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TIMER"
+            android:textColor="@color/text_color"
+            android:layout_gravity="center"
+            android:textSize="40sp"
+            android:layout_marginTop="20dp"/>-->
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timerText"
+            android:textSize="50sp"
+            android:text="00 : 00 : 00"
+            android:textColor="@color/text_color"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="200dp"
+    />
+
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="60dp"
+            android:layout_marginHorizontal="10dp"
+    >
+
+        <com.google.android.material.button.MaterialButton
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:text="Reset"
+                android:id="@+id/resetButton"
+                android:textColor="@color/text_color"
+                android:textSize="20sp"
+                android:onClick="resetTapped"
+                app:borderWidth="1dp"
+                app:rippleColor="#D81B60"
+                app:backgroundTint="#D81B37"/>
+
+
+        <com.google.android.material.button.MaterialButton
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:text="Start"
+                android:id="@+id/startStopButton"
+                android:textColor="@color/text_color"
+                android:textSize="20sp"
+                android:layout_gravity="end"
+                android:layout_marginRight="15dp"
+                android:onClick="startStopTapped"
+                app:borderWidth="1dp"
+                app:rippleColor="@color/button_color"
+                app:backgroundTint="@color/custom_ripple_colosr"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!--<com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_margin="10sp"
+            android:id="@+id/submitName"
+            android:text="submit"
+            android:textSize="26sp"
+            app:borderWidth="1dp"
+            app:rippleColor="@color/button_color"
+            app:backgroundTint="@color/custom_ripple_colosr"
+            app:tint="@color/text_color"/> -->
+
+</LinearLayout>

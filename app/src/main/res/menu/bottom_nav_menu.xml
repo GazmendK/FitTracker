@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.tracker.MainActivity">
+
+    <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/icon_home_black_24dp"
+            android:enabled="true"
+            android:title="@string/title_home"
+            />
+
+    <item
+            android:id="@+id/navigation_dashboard"
+            android:icon="@drawable/icon_nutrition"
+            android:enabled="true"
+            android:title="Nutritions"/>
+
+    <item
+            android:id="@+id/navigation_notifications"
+            android:icon="@drawable/icon_fitness_center_24px"
+            android:enabled="true"
+            android:title="Tracker"/>
+
+</menu>
